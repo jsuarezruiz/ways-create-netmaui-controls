@@ -1,0 +1,61 @@
+<Project>
+
+	<ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true AND $(TargetFramework.StartsWith('net6.0-ios')) != true ">
+		<Compile Remove="Platforms\iOS\*.cs" />
+		<None Include="Platforms\iOS\*.cs" />
+	</ItemGroup>
+	
+	<ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.Mac')) != true AND $(TargetFramework.StartsWith('net6.0-maccatalyst')) != true ">
+		<Compile Remove="Platforms\MacCatalyst\*.cs" />
+		<None Include="Platforms\MacCatalyst\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.StartsWith('MonoAndroid')) != true AND $(TargetFramework.StartsWith('net6.0-android')) != true ">
+		<Compile Remove="Platforms\Android\*.cs" />
+		<None Include="Platforms\Android\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows')) != true ">
+		<Compile Remove="Platforms\Windows\*.cs" />
+		<None Include="Platforms\Windows\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.StartsWith('net6.0-ios')) == true OR $(TargetFramework.StartsWith('net6.0-maccatalyst')) == true OR $(TargetFramework.StartsWith('net6.0-android')) == true OR $(TargetFramework.Contains('-windows')) == true">
+		<Compile Remove="**\*.Standard.cs" />
+		<None Include="**\*.Standard.cs" />
+		<Compile Remove="**\Standard\**\*.cs" />
+		<None Include="**\Standard\**\*.cs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Compile Remove="bin\**;obj\**" />
+		<None Remove="bin\**;obj\**" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<!-- ANDROID -->
+	<PropertyGroup Condition="$(TargetFramework.StartsWith('net6.0-android'))">
+		<DefineConstants>$(DefineConstants);MONOANDROID</DefineConstants>
+	</PropertyGroup>
+
+	<!-- IOS -->
+	<PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0-ios' ">
+		<DefineConstants>$(DefineConstants);IOS</DefineConstants>
+	</PropertyGroup>
+
+	<!-- MACCATALYST -->
+	<PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0-maccatalyst' ">
+		<DefineConstants>$(DefineConstants);MACCATALYST;IOS</DefineConstants>
+	</PropertyGroup>
+
+	<!-- WINDOWS -->
+	<PropertyGroup Condition="$(TargetFramework.Contains('-windows')) == true ">
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+		<DefineConstants>WINDOWS;$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+	
+</Project>

@@ -59,10 +59,14 @@
                 Padding="12">
                 <Label
                     Text=".NET MAUI CheckBox"/>
-                <CheckBox />
+                <CheckBox
+                    HorizontalOptions="Start"/>
+                <Label
+                    Text="Handler/Renderer"/>
+                <controls:CustomCheckBox />
                 <Label    
                     Text="Custom Control using ContentView"/>
-                <controls:CustomCheckBox />
+                <controls:ContentViewCheckBox />
                 <Label 
                     Text="Templated Control using TemplatedView"/>
                 <controls:TemplatedCheckBox />
