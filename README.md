@@ -327,3 +327,7 @@ For the best possible performance:
 
 * _“We are not using native elements; we are drawing on a canvas.”_
 * Requires knowledge of Maui Graphics APIs.
+
+## Copyright and license
+
+Code released under the [MIT license](https://opensource.org/licenses/MIT).
