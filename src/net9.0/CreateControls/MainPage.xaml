@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CreateControls.Controls"
+    x:Class="CreateControls.MainPage"
+    Title="Ways to Create .NET MAUI Controls">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <ControlTemplate x:Key="CustomCheckBoxTemplate">
+                <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    RowSpacing="0"
+                    Margin="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Ellipse
+                        x:Name="PART_Background"
+                        Fill="Transparent"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Stroke="{TemplateBinding Color}"
+                        StrokeThickness="2"/>
+                    <Path
+                        x:Name="PART_Glyph"
+                        Data="M4.6259764,9.8700246L5.672973,9.8700246 20.922971,9.8700246 21.959958,9.8700246 21.959958,10.906018 21.959958,17.01302 21.959958,24.509011C21.959958,25.081,21.499997,25.545997,20.922971,25.545997L18.705991,25.545997 18.705991,30.156999C18.705991,31.172988 17.88397,31.999997 16.862973,31.999997 15.841002,31.999997 15.013975,31.172988 15.013975,30.156999L15.013975,25.545997 11.581969,25.545997 11.581969,30.156999C11.581969,31.172988 10.755004,31.999997 9.7329705,31.999997 8.7169793,31.999997 7.8899529,31.172988 7.8899529,30.156999L7.8899529,25.545997 5.672973,25.545997C5.1009515,25.545997,4.6359861,25.081,4.6359861,24.509011L4.6359861,17.01302 4.6259764,17.01302z M24.742978,9.2770232C25.763974,9.2770232,26.591001,10.104017,26.591001,11.120023L26.591001,19.415009C26.591001,20.435012 25.763974,21.262006 24.742978,21.262006 23.726987,21.262006 22.899961,20.435012 22.899961,19.415009L22.899961,11.120023C22.899961,10.104017,23.726987,9.2770232,24.742978,9.2770232z M1.8479612,9.2770232C2.8689573,9.2770232,3.6909788,10.104017,3.6909786,11.120023L3.6909786,19.415009C3.6909788,20.435012 2.8689573,21.262006 1.8479612,21.262006 0.82696538,21.262006 1.5309888E-07,20.435012 0,19.415009L0,11.120023C1.5309888E-07,10.104017,0.82696538,9.2770232,1.8479612,9.2770232z M17.073972,4.0560297C16.501951,4.0560297 16.037961,4.5210332 16.037961,5.0930385 16.037961,5.6640367 16.501951,6.1290325 17.073972,6.1290325 17.645994,6.1290325 18.109983,5.6640367 18.109983,5.0930385 18.109983,4.5210332 17.645994,4.0560297 17.073972,4.0560297z M9.5180047,4.0560297C8.9459832,4.0560297 8.4809564,4.5210332 8.4809564,5.0930385 8.4809564,5.6640367 8.9459832,6.1290325 9.5180047,6.1290325 10.088989,6.1290325 10.553954,5.6640367 10.553954,5.0930385 10.553954,4.5210332 10.088989,4.0560297 9.5180047,4.0560297z M7.8779901,3.575096E-05C7.9029534,3.5738248E-05,7.922973,0.0080389613,7.9349969,0.023038374L9.4509881,2.1620352C10.49298,1.7640331 11.753966,1.5190384 13.295958,1.5240357 14.828001,1.5290329 16.088987,1.7790325 17.124997,2.1880361L18.65698,0.023038374C18.686948,-0.017961977 18.783994,-0.0019631603 18.865964,0.0540366 18.953,0.11504107 18.99896,0.20203893 18.962949,0.24303909L17.481992,2.3410355C21.724973,4.2450322,21.903989,8.8450317,21.903989,8.8450317L4.692993,8.8450317C4.692993,8.8450317,4.8150022,4.2040319,9.0939935,2.3150346L7.6279901,0.24303909C7.5979608,0.20203893 7.6389764,0.11504107 7.7249749,0.0540366 7.7799676,0.019040532 7.8359979,-0.00096371101 7.8779901,3.575096E-05z"
+                        Stroke="White"
+                        StrokeThickness="1"
+                        Aspect="Uniform"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HeightRequest="20"
+                        WidthRequest="20"
+                        Opacity="0" />
+                    <ContentPresenter
+                        x:Name="PART_Content"
+                        Content="{TemplateBinding Content}"
+                        Margin="{TemplateBinding Padding}"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                </Grid>
+            </ControlTemplate>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="24">
+            <Label
+                Padding="12"
+                BackgroundColor="Black"              
+                TextColor="White"
+                Text="Next, we can see each CheckBox created in a different way."/>
+            <StackLayout   
+                Padding="12">
+                <Label
+                    Text=".NET MAUI CheckBox"/>
+                <CheckBox />
+                <Label    
+                    Text="02. Handler" />
+                <controls:CustomCheckBox />
+                <Label    
+                    Text="03. ContentView"/>
+                <controls:ContentViewCheckBox />
+                <Label 
+                    Text="04.  TemplatedView"/>
+                <controls:TemplatedCheckBox />
+                <controls:TemplatedCheckBox   
+                    Color="Green"
+                    ControlTemplate="{StaticResource CustomCheckBoxTemplate}"/>
+                <Label    
+                    Text="05. Drawn Control"/>
+                <controls:DrawnCheckBox />
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
