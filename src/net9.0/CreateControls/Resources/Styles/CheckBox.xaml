@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CreateControls.Controls.CheckBox"
+    xmlns:controls="clr-namespace:CreateControls.Controls">
+
+    <Style TargetType="controls:TemplatedCheckBox">
+        <Setter Property="ControlTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid
+                         HorizontalOptions="Start"
+                         VerticalOptions="Start"
+                         RowSpacing="0"
+                         Margin="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle
+                             x:Name="PART_Background"
+                             Fill="Transparent"
+                             HeightRequest="18"
+                             WidthRequest="18"
+                             RadiusX="2"
+                             RadiusY="2"
+                             Stroke="{TemplateBinding Color}"
+                             StrokeThickness="2"/>
+                        <!--Create an V to indicate that the CheckBox is selected.-->
+                        <Path
+                             x:Name="PART_Glyph"
+                             Data="M30.561941,0L31.997,1.393004 10.467954,23.597999 0,15.350999 1.2379759,13.780992 10.287961,20.909952z"
+                             Stroke="White"
+                             StrokeThickness="1"
+                             Aspect="Uniform"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             HeightRequest="14"
+                             WidthRequest="14"
+                             Opacity="0"
+                             Margin="2"/>
+                        <ContentPresenter
+                             x:Name="PART_Content"
+                             Content="{TemplateBinding Content}"
+                             Margin="{TemplateBinding Padding}"
+                             Grid.Column="1"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
