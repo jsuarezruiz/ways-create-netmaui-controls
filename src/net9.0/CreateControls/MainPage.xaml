@@ -62,19 +62,19 @@
                     Text=".NET MAUI CheckBox"/>
                 <CheckBox />
                 <Label    
-                    Text="02. Handler" />
+                    Text="01. Handler" />
                 <controls:CustomCheckBox />
                 <Label    
-                    Text="03. ContentView"/>
+                    Text="02. ContentView"/>
                 <controls:ContentViewCheckBox />
                 <Label 
-                    Text="04.  TemplatedView"/>
+                    Text="03. TemplatedView"/>
                 <controls:TemplatedCheckBox />
                 <controls:TemplatedCheckBox   
                     Color="Green"
                     ControlTemplate="{StaticResource CustomCheckBoxTemplate}"/>
                 <Label    
-                    Text="05. Drawn Control"/>
+                    Text="04. Drawn Control"/>
                 <controls:DrawnCheckBox />
             </StackLayout>
         </VerticalStackLayout>
