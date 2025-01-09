@@ -6,7 +6,7 @@ namespace CreateControls.Controls
     {
         protected override Microsoft.UI.Xaml.Controls.CheckBox CreatePlatformView()
         {
-            throw new NotImplementedException();
+            return new Microsoft.UI.Xaml.Controls.CheckBox();
         }
 
         public static void MapIsChecked(CustomCheckBoxHandler handler, ICustomCheckBox checkBox)

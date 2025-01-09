@@ -2,9 +2,9 @@
 {
     public static class CustomCheckBoxExtensions
     {
-        public static void UpdateIsChecked(this object platformCheckBox, ICustomCheckBox checkBox)
+        public static void UpdateIsChecked(this Microsoft.UI.Xaml.Controls.CheckBox platformCheckBox, ICustomCheckBox checkBox)
         {
-            throw new NotImplementedException();
+            platformCheckBox.IsChecked = checkBox.IsChecked;
         }
     }
 }
